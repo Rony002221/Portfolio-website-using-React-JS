@@ -5,14 +5,35 @@ import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 
 
 class TopNavigationBar extends Component {
+    constructor(){
+        super();
+        this.state={
+            navBarTitle:"navTitle"
+        }
+    }
+
+
+    onScroll = () =>{
+        if(window.scrollY>100){
+            this.setState({navBarTitle:'navTitleScroll'})
+        }
+        else if(window.scrollY<100){
+            this.setState({navBarTitle:'navTitle'})
+        }
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll',this.onScroll)
+    }
+
     render() {
         return (
             <Fragment>
 
 
-                    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+                    <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
                         <Container>
-                            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                            <Navbar.Brand href="#home" className={this.state.navBarTitle}>MHR</Navbar.Brand>
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="me-auto">

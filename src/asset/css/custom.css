@@ -63,3 +63,18 @@
 .serviceCard:hover{
     box-shadow: 0 0 12px 0 rgba(0,115,230,0.6);
 }
+
+
+
+.navTitle{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff !important;
+}
+.navTitleScroll{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #0d6efd !important;
+}
