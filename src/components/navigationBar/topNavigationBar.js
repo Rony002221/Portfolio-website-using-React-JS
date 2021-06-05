@@ -11,17 +11,19 @@ class TopNavigationBar extends Component {
         super();
         this.state={
             navBarTitle:"navTitle",
-            navBarLogo: [whiteLogo]
+            navBarLogo: [whiteLogo],
+            navBarBg: "navBarBackground",
+            navMenu: "navItem"
         }
     }
 
 
     onScroll = () =>{
         if(window.scrollY>100){
-            this.setState({navBarTitle:'navTitleScroll', navBarLogo: [blueLogo]});
+            this.setState({navBarTitle:'navTitleScroll', navBarLogo: [blueLogo], navBarBg:'navBarBackgroundScroll', navMenu:'navItemScroll'});
         }
         else if(window.scrollY<100){
-            this.setState({navBarTitle:'navTitle', navBarLogo:[whiteLogo]});
+            this.setState({navBarTitle:'navTitle', navBarLogo:[whiteLogo], navBarBg:'navBarBackground', navMenu:'navItem'});
         }
     }
 
@@ -34,7 +36,7 @@ class TopNavigationBar extends Component {
             <Fragment>
 
 
-                    <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
+                    <Navbar className={this.state.navBarBg} fixed="top" collapseOnSelect expand="lg"  variant="dark">
                         <Container>
                             <Navbar.Brand href="#home" className={this.state.navBarTitle}> <img src={this.state.navBarLogo} /> MHR</Navbar.Brand>
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -43,12 +45,12 @@ class TopNavigationBar extends Component {
 
                                 </Nav>
                                 <Nav>
-                                    <Nav.Link href="#deets">HOME</Nav.Link>
-                                    <Nav.Link href="#deets">PORTFOLIO</Nav.Link>
-                                    <Nav.Link href="#deets">COURSES</Nav.Link>
-                                    <Nav.Link href="#deets">SERVICES</Nav.Link>
-                                    <Nav.Link href="#deets">CONTACT US</Nav.Link>
-                                    <Nav.Link href="#deets">ABOUT US</Nav.Link>
+                                    <Nav.Link className={this.state.navMenu} href="#deets">HOME</Nav.Link>
+                                    <Nav.Link className={this.state.navMenu} href="#deets">PORTFOLIO</Nav.Link>
+                                    <Nav.Link className={this.state.navMenu} href="#deets">COURSES</Nav.Link>
+                                    <Nav.Link className={this.state.navMenu} href="#deets">SERVICES</Nav.Link>
+                                    <Nav.Link className={this.state.navMenu} href="#deets">CONTACT US</Nav.Link>
+                                    <Nav.Link className={this.state.navMenu} href="#deets">ABOUT US</Nav.Link>
 
                                 </Nav>
                             </Navbar.Collapse>
