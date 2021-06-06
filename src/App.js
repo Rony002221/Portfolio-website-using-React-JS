@@ -5,6 +5,7 @@ import {Button} from "react-bootstrap";
 import TopBanner from "./components/topBanner/TopBanner";
 import Services from "./components/services/services";
 import TopNavigationBar from "./components/navigationBar/topNavigationBar";
+import Analysis from "./components/analysis/analysis";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <TopNavigationBar />
       <TopBanner/>
         <Services/>
+        <Analysis/>
 
 
     </div>
